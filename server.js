@@ -16,13 +16,12 @@ app.use(bodyParser.json());
 // const db = require("./config/keys").mongoURI;
 
 // Connect to MongoDB
-var MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI = require("./config/keys").mongoURI;
 
 mongoose
   .connect(
-    MONGODB_URI,
-    { useNewUrlParser: true }
+    MONGODB_URI
+    // { useNewUrlParser: true }
   )
   // mongoose
   //   .connect(db)
