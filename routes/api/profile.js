@@ -13,9 +13,9 @@ const Profile = require("../../models/Profile");
 // Load User Model
 const User = require("../../models/User");
 
-// @route GET api/profile/test
-// @desc Tests post route
-// @access Public
+// @route   GET api/profile/test
+// @desc    Tests profile route
+// @access  Public
 router.get("/test", (req, res) => res.json({ msg: "Profile Works" }));
 
 // @route   GET api/profile
@@ -233,6 +233,7 @@ router.post(
     });
   }
 );
+
 // @route   DELETE api/profile/experience/:exp_id
 // @desc    Delete experience from profile
 // @access  Private
