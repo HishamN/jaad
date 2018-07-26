@@ -18,24 +18,24 @@ class Landing extends Component {
             <div className="row">
               <div className="col-md-12 text-center">
                 <h1 className="display-3 mb-4">
-                  Developers From the East ملتقى المبرمجين العرب
-                </h1>
+                  ⚽ Welcome to social soccer 🌎
+                </h1>{" "}
                 <p className="lead">
                   {" "}
-                  Create a developer profile/portfolio, share posts and get help
-                  from other developers
-                </p>
+                  Let's Goal lets you make the most of every game you play and
+                  helps you discover new games, wherever you are{" "}
+                </p>{" "}
                 <hr />
-                <Link to="/register" className="btn btn-lg btn-info mr-2">
-                  Sign Up
-                </Link>
-                <Link to="/login" className="btn btn-lg btn-light">
-                  Login
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
+                <Link to="/register" className="btn btn-lg btn-outline-danger">
+                  Let's Connect{" "}
+                </Link>{" "}
+                <Link to="/login" className="btn btn-lg btn-success">
+                  Welcome Back{" "}
+                </Link>{" "}
+              </div>{" "}
+            </div>{" "}
+          </div>{" "}
+        </div>{" "}
       </div>
     );
   }

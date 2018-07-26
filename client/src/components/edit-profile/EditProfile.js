@@ -15,7 +15,7 @@ class CreateProfile extends Component {
     this.state = {
       displaySocialInputs: false,
       handle: "",
-      company: "",
+      team: "",
       website: "",
       location: "",
       status: "",
@@ -50,7 +50,7 @@ class CreateProfile extends Component {
       const skillsCSV = profile.skills.join(",");
 
       // If profile field doesnt exist, make empty string
-      profile.company = !isEmpty(profile.company) ? profile.company : "";
+      profile.team = !isEmpty(profile.team) ? profile.team : "";
       profile.website = !isEmpty(profile.website) ? profile.website : "";
       profile.location = !isEmpty(profile.location) ? profile.location : "";
       profile.githubusername = !isEmpty(profile.githubusername)
@@ -77,7 +77,7 @@ class CreateProfile extends Component {
       // Set component fields state
       this.setState({
         handle: profile.handle,
-        company: profile.company,
+        team: profile.team,
         website: profile.website,
         location: profile.location,
         status: profile.status,
@@ -98,7 +98,7 @@ class CreateProfile extends Component {
 
     const profileData = {
       handle: this.state.handle,
-      company: this.state.company,
+      team: this.state.team,
       website: this.state.website,
       location: this.state.location,
       status: this.state.status,
@@ -177,14 +177,14 @@ class CreateProfile extends Component {
 
     // Select options for status
     const options = [
-      { label: "* Select Professional Status", value: 0 },
-      { label: "Developer", value: "Developer" },
-      { label: "Junior Developer", value: "Junior Developer" },
-      { label: "Senior Developer", value: "Senior Developer" },
-      { label: "Manager", value: "Manager" },
-      { label: "Student or Learning", value: "Student or Learning" },
-      { label: "Instructor or Teacher", value: "Instructor or Teacher" },
-      { label: "Intern", value: "Intern" },
+      { label: "* Select preferred position", value: 0 },
+      { label: "Forward", value: "Forward" },
+      { label: "Midfielder", value: "Midfielder" },
+      { label: "Defender", value: "Defender" },
+      { label: "Sweeper", value: "Sweeper" },
+      { label: "Goalkeeper", value: "Goalkeeper" },
+      { label: "Referee", value: "Referee" },
+      { label: "Coach", value: "Coach" },
       { label: "Other", value: "Other" }
     ];
 
@@ -193,7 +193,7 @@ class CreateProfile extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <Link to="/dashboard" className="btn btn-light">
+              <Link to="/dashboard" className="btn btn-warning">
                 Go Back
               </Link>
               <h1 className="display-4 text-center">Edit Profile</h1>
@@ -205,24 +205,24 @@ class CreateProfile extends Component {
                   value={this.state.handle}
                   onChange={this.onChange}
                   error={errors.handle}
-                  info="A unique handle for your profile URL. Your full name, company name, nickname"
+                  info="A unique handle for your profile URL. Your full name, team name, nickname"
                 />
                 <SelectListGroup
-                  placeholder="Status"
+                  placeholder="Your Position"
                   name="status"
                   value={this.state.status}
                   onChange={this.onChange}
                   options={options}
                   error={errors.status}
-                  info="Give us an idea of where you are at in your career"
+                  info="Give us an idea of what position you currently play"
                 />
                 <TextFieldGroup
-                  placeholder="Company"
-                  name="company"
-                  value={this.state.company}
+                  placeholder="Team"
+                  name="team"
+                  value={this.state.team}
                   onChange={this.onChange}
-                  error={errors.company}
-                  info="Could be your own company or one you work for"
+                  error={errors.team}
+                  info="Could be your own team or one you work for"
                 />
                 <TextFieldGroup
                   placeholder="Website"
@@ -230,7 +230,7 @@ class CreateProfile extends Component {
                   value={this.state.website}
                   onChange={this.onChange}
                   error={errors.website}
-                  info="Could be your own website or a company one"
+                  info="Could be your own website or a team one"
                 />
                 <TextFieldGroup
                   placeholder="Location"
@@ -247,16 +247,9 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   error={errors.skills}
                   info="Please use comma separated values (eg.
-                    HTML,CSS,JavaScript,PHP"
+                    forward, midfielder, defender, sweeper, goalkeeper"
                 />
-                <TextFieldGroup
-                  placeholder="Github Username"
-                  name="githubusername"
-                  value={this.state.githubusername}
-                  onChange={this.onChange}
-                  error={errors.githubusername}
-                  info="If you want your latest repos and a Github link, include your username"
-                />
+
                 <TextAreaFieldGroup
                   placeholder="Short Bio"
                   name="bio"
@@ -274,7 +267,7 @@ class CreateProfile extends Component {
                         displaySocialInputs: !prevState.displaySocialInputs
                       }));
                     }}
-                    className="btn btn-light"
+                    className="btn btn-outline-primary"
                   >
                     Add Social Network Links
                   </button>
@@ -284,7 +277,7 @@ class CreateProfile extends Component {
                 <input
                   type="submit"
                   value="Submit"
-                  className="btn btn-info btn-block mt-4"
+                  className="btn btn-success btn-block mt-4"
                 />
               </form>
             </div>

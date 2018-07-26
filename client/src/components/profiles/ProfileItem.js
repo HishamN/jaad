@@ -8,7 +8,7 @@ class ProfileItem extends Component {
     const { profile } = this.props;
 
     return (
-      <div className="card card-body bg-light mb-3">
+      <div className="card card-body progress-bar-striped bg-success mb-3">
         <div className="row">
           <div className="col-2">
             <img src={profile.user.avatar} alt="" className="rounded-circle" />
@@ -17,16 +17,14 @@ class ProfileItem extends Component {
             <h3>{profile.user.name}</h3>
             <p>
               {profile.status}{" "}
-              {isEmpty(profile.company) ? null : (
-                <span>at {profile.company}</span>
-              )}
+              {isEmpty(profile.team) ? null : <span>at {profile.team}</span>}
             </p>
             <p>
               {isEmpty(profile.location) ? null : (
                 <span>{profile.location}</span>
               )}
             </p>
-            <Link to={`/profile/${profile.handle}`} className="btn btn-info">
+            <Link to={`/profile/${profile.handle}`} className="btn btn-warning">
               View Profile
             </Link>
           </div>

@@ -120,7 +120,7 @@ router.post(
     const profileFields = {};
     profileFields.user = req.user.id;
     if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.company) profileFields.company = req.body.company;
+    if (req.body.team) profileFields.team = req.body.team;
     if (req.body.website) profileFields.website = req.body.website;
     if (req.body.location) profileFields.location = req.body.location;
     if (req.body.bio) profileFields.bio = req.body.bio;
@@ -184,7 +184,7 @@ router.post(
     Profile.findOne({ user: req.user.id }).then(profile => {
       const newExp = {
         title: req.body.title,
-        company: req.body.company,
+        team: req.body.team,
         location: req.body.location,
         from: req.body.from,
         to: req.body.to,
